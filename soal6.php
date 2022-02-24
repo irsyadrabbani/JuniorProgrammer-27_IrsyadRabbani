@@ -24,8 +24,13 @@ class Karyawan {
 
   function gaji_bersih() {
 
-    echo $this->nama," | ", $this->gaji, " | ", $this->jabatan, " | ", $this->region;
+   if($this->gaji>15000000){
+     $this->gaji=$this->gaji+(10/100*$this->gaji);
+     echo $this->nama,"---",  $this->gaji;
+   }
   }
+
+
  
 }
 
@@ -45,7 +50,10 @@ echo $ahmad->tampil_data();
 echo "<br>";
 echo $felicia->tampil_data();
 echo "<br>";
-
-
-
+echo "<br>";
+echo "<br>";
+echo "---Total Gaji---";
+echo  $agus->gaji_bersih();
+echo "<br>";
+echo  $dina->gaji_bersih();
 ?>
